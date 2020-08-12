@@ -11,10 +11,14 @@ export class InformacionService {
   constructor() { }
 }
 
-agregarPost() {
-  return this.post.push(Post);
-}
+// agregarPost() {
+//   return this.post.push(Post);
+// }
 
-getAllPost() {
-  return this.post[];
-}
+// getAllPost() {
+//   return this.post[];
+// }
+
+// getPostByCategoria() {
+
+// }
