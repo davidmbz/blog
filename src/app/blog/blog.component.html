@@ -1,1 +1,14 @@
-<p>blog works!</p>
+<select (change)="onChange($event)">
+    <option value="todos">Todos</option>
+    <option value="cine">Cine</option>
+    <option value="libros">Libros</option>
+</select>
+
+<div class="publicaciones">
+    <div class="post" *ngFor="let post of publicaciones">
+        <h1>{{ post.titulo }}</h1>
+        <img [src]="post.imagen">
+        <p>{{ post.texto }}</p>
+        <p>{{ post.fecha }} {{ post.autor }} - {{ post.categoria }}</p>
+    </div>
+</div>

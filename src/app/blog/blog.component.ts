@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { InformacionService } from '../informacion.service';
+import { Post } from '../models/post.model';
 
 @Component({
   selector: 'app-blog',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogComponent implements OnInit {
 
-  constructor() { }
+  publicaciones: Post[];
 
-  ngOnInit(): void {
+  constructor(private informacionService: InformacionService) { }
+
+  async ngOnInit() {
+    this.publicaciones = await this.informacionService.getAllPost();
+  }
+
+  async onChange($event) {
+    if ($event.target.value === 'todos') {
+      this.publicaciones = await this.informacionService.getAllPost();
+    } else {
+      this.publicaciones = await this.informacionService.getPostByCategoria($event.target.value);
+      console.log($event.target.value);
+
+    }
   }
 
 }
