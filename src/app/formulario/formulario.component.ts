@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { InformacionService } from '../informacion.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario',
@@ -10,7 +12,7 @@ export class FormularioComponent implements OnInit {
 
   formulario: FormGroup;
 
-  constructor() {
+  constructor(private informacionService: InformacionService, private router: Router) {
     this.formulario = new FormGroup({
       titulo: new FormControl('', [
         Validators.required
@@ -32,8 +34,10 @@ export class FormularioComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit() {
-    console.log(this.formulario.value);
+  async onSubmit() {
+    const response = await this.informacionService.agregarPost(this.formulario.value);
+    console.log(response);
+    this.router.navigate(['/blog']);
   }
 
 }

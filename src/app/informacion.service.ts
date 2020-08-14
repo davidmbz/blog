@@ -15,10 +15,12 @@ export class InformacionService {
     });
   }
 
-  // agregarPost() {
-  //   return this.post.push(Post);
-  // }
-
+  agregarPost(Post): Promise<string> {
+    return new Promise<string>((resolve, reject) => {
+      POST.push(Post);
+      resolve('Agregado correctamente');
+    });
+  }
 
   getPostByCategoria(pCategoria): Promise<Post[]> {
     return new Promise((resolve, reject) => {
