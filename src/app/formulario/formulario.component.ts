@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { InformacionService } from '../informacion.service';
 import { Router } from '@angular/router';
+import { POST } from '../db/post.db';
 
 @Component({
   selector: 'app-formulario',
@@ -36,8 +37,8 @@ export class FormularioComponent implements OnInit {
 
   async onSubmit() {
     const response = await this.informacionService.agregarPost(this.formulario.value);
-    console.log(response);
     this.router.navigate(['/blog']);
+    localStorage.setItem(response, JSON.stringify(this.formulario.value))
   }
 
 }
