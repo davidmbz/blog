@@ -8,7 +8,7 @@
     </div>
     <div class="form-group">
         <label>Texto</label>
-        <input type="text" class="form-control" formControlName="texto">
+        <textarea type="textarea" rows="10" cols="20" class="form-control" formControlName="texto"></textarea>
         <p class="error" *ngIf="formulario.controls.texto.errors && formulario.controls.texto.touched">
             El campo texto es requerido
         </p>
@@ -32,7 +32,8 @@
         <label>Categoría</label>
         <select class="form-control" formControlName="categoria">
             <option value="cine">CINE</option>
-            <option value="juegos">JUEGOS</option>
+            <option value="cine">SERIES</option>
+            <option value="juegos">LIBROS</option>
         </select>
         <p class="error" *ngIf="formulario.controls.categoria.errors && formulario.controls.categoria.touched">
             Es necesario escribir una categoria
@@ -41,4 +42,4 @@
     <input type="submit" value="Enviar" [disabled]="!formulario.valid" class="btn btn-block btn-dark">
 </form>
 
-{{ formulario.value | json }}
+<!-- {{ formulario.value | json }} -->

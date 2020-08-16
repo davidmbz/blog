@@ -12,6 +12,7 @@ export class InformacionService {
   getAllPost(): Promise<Post[]> {
     return new Promise((resolve, reject) => {
       resolve(POST);
+      // Response = JSON.parse(localStorage.getItem('token'));
     });
   }
 

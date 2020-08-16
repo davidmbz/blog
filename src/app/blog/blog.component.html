@@ -1,13 +1,21 @@
-<select (change)="onChange($event)">
+<!-- <select (change)="onChange($event)">
     <option value="todos">Todos</option>
     <option value="cine">Cine</option>
     <option value="libros">Libros</option>
-</select>
+</select> -->
+
+<div class="mb-4" (click)="onClick($event)">
+    <button type="button" class="btn btn-dark" value="INICIO" href="/blog">Inicio</button>
+    <button type="button" class="btn btn-dark" value="CINE" href="/blog">Cine</button>
+    <button type="button" class="btn btn-dark" value="SERIES" href="/blog">Series</button>
+    <button type="button" class="btn btn-dark" value="LIBROS" href="/blog">Libros</button>
+    <button type="button" class="btn btn-dark float-right" routerLink="/new">Agregar Post</button>
+</div>
 
 <div class="publicaciones">
     <div class="post" *ngFor="let post of publicaciones">
         <h1>{{ post.titulo }}</h1>
-        <img [src]="post.imagen">
+        <img [src]="post.imagen" class="center-block">
         <p>{{ post.texto }}</p>
         <p>{{ post.fecha }} {{ post.autor }} - {{ post.categoria }}</p>
     </div>

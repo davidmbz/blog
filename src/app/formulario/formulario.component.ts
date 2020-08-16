@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { InformacionService } from '../informacion.service';
 import { Router } from '@angular/router';
-import { POST } from '../db/post.db';
 
 @Component({
   selector: 'app-formulario',

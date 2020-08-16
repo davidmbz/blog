@@ -1,0 +1,13 @@
+.publicaciones {
+    text-align: center;
+}
+
+.publicaciones img {
+    width: 400px;
+    height: auto;
+    margin: 20px 0;
+}
+
+.publicaciones h1, p {
+    text-align: left;
+}

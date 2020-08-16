@@ -18,13 +18,16 @@ export class BlogComponent implements OnInit {
     // console.log(this.informacionService.getAllPost());
   }
 
-  async onChange($event) {
-    if ($event.target.value === 'todos') {
+  async onClick($event) {
+    if ($event.target.value === 'INICIO') {
       this.publicaciones = await this.informacionService.getAllPost();
-    } else {
+    } else if ($event.target.value === 'CINE') {
       this.publicaciones = await this.informacionService.getPostByCategoria($event.target.value);
-      console.log($event.target.value);
-
+      // console.log($event.target.value);
+    } else if ($event.target.value === 'LIBROS') {
+      this.publicaciones = await this.informacionService.getPostByCategoria($event.target.value);
+    } else if ($event.target.value === 'SERIES') {
+      this.publicaciones = await this.informacionService.getPostByCategoria($event.target.value);
     }
   }
 
