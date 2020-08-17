@@ -31,9 +31,9 @@
     <div class="form-group">
         <label>Categoría</label>
         <select class="form-control" formControlName="categoria">
-            <option value="cine">CINE</option>
-            <option value="cine">SERIES</option>
-            <option value="juegos">LIBROS</option>
+            <option value="CINE">CINE</option>
+            <option value="SERIES">SERIES</option>
+            <option value="LIBROS">LIBROS</option>
         </select>
         <p class="error" *ngIf="formulario.controls.categoria.errors && formulario.controls.categoria.touched">
             Es necesario escribir una categoria

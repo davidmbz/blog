@@ -8,6 +8,15 @@
     margin: 20px 0;
 }
 
-.publicaciones h1, p {
+.publicaciones h1 {
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    color: lightseagreen;
+}
+
+.publicaciones p {
     text-align: left;
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
 }
